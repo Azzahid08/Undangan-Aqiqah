@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Undangan Aqiqah</title>
+<meta name="description" content="Undangan Aqiqah" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<!--
+  data-page="invitation" dipakai oleh script.js untuk tahu fungsi mana
+  yang harus dijalankan saat halaman ini dibuka.
+-->
+<body data-page="invitation">
+
+  <div id="welcomeOverlay" class="welcome-overlay">
+  <div class="overlay-content">
+    <div class="eyebrow">UNDANGAN AQIQAH</div>
+    <h1 class="hero-title" id="overlayChildName">—</h1>
+    <p class="greeting-label">Kepada Yth.</p>
+    <div class="guest-name" id="overlayGuestName">Bapak/Ibu/Saudara/i</div>
+    <button id="openInviteBtn" class="btn btn-solid mt-4">Buka Undangan</button>
+  </div>
+</div>
+
+<audio id="bgMusic" loop>
+  <source src="assets/music.mp3" type="audio/mpeg">
+</audio>
+
+  <div class="card">
+    <div class="hero">
+      <img id="coverImage" src="assets/cover.jpg" alt="Foto sampul" />
+      <div class="hero-content">
+        <div class="eyebrow">UNDANGAN AQIQAH</div>
+        <h1 class="hero-title" id="childName">—</h1>
+        <div class="hero-sub" id="parentsName">—</div>
+      </div>
+    </div>
+
+    <div class="frame">
+
+      <!-- Sapaan nama tamu, diisi dari parameter ?to= lewat script.js
+           menggunakan textContent (aman dari XSS) -->
+      <div class="greeting">
+        <div class="greeting-label">Kepada Yth.</div>
+        <div class="guest-name" id="guestName">Bapak/Ibu/Saudara/i</div>
+      </div>
+
+      <div class="verse" id="verseWrap">
+        <p id="openingVerse"></p>
+        <span class="verse-source" id="openingVerseSource"></span>
+      </div>
+
+      <div class="divider"><span></span></div>
+
+      <div class="section">
+        <div class="section-title">
+          <small>ASSALAMU'ALAIKUM WARAHMATULLAHI WABARAKATUH</small>
+          Sepatah Kata
+        </div>
+        <p class="body-text" id="invitationMessage"></p>
+      </div>
+
+      <div class="detail-card">
+        <div class="detail-row">
+          <div class="detail-label">HARI &amp; TANGGAL</div>
+          <div class="detail-value" id="dateDisplay">—</div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-label">WAKTU</div>
+          <div class="detail-value" id="timeDisplay">—</div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-label">TEMPAT</div>
+          <div class="detail-value" id="venueName">—</div>
+          <div class="detail-value small" id="address">—</div>
+        </div>
+        <div class="countdown" id="countdown">Menghitung waktu…</div>
+      </div>
+
+      <div class="btn-row">
+        <a class="btn btn-solid" id="addToCalendar" href="#" target="_blank" rel="noopener">
+          + Simpan ke Kalender
+        </a>
+        <a class="btn" id="mapsLink" href="#" target="_blank" rel="noopener">
+          Lihat Peta
+        </a>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><small>KENANGAN</small>Galeri</div>
+      </div>
+      <div class="gallery" id="gallery"></div>
+
+      <div class="divider"><span></span></div>
+
+      <div class="section">
+        <p class="body-text" id="closingMessage"></p>
+      </div>
+
+      <div class="btn-row">
+        <a class="btn btn-solid" id="waConfirm" href="#" target="_blank" rel="noopener">
+          Konfirmasi Kehadiran
+        </a>
+      </div>
+
+      <div class="footer">
+        Dibuat dengan penuh syukur &middot; Wassalamu'alaikum Warahmatullahi Wabarakatuh
+      </div>
+
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

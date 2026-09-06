@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Buat Link Undangan</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="generator" class="generator-page">
+
+  <div class="generator-card">
+    <h1>Buat Link Undangan</h1>
+    <p class="lead">Masukkan nama tamu untuk membuat link undangan pribadi.</p>
+
+    <form id="generatorForm" novalidate>
+      <div class="field">
+        <label for="guestNameInput">Nama Tamu</label>
+        <input
+          type="text"
+          id="guestNameInput"
+          placeholder="Contoh: Bapak Hendra Wijaya"
+          maxlength="80"
+          autocomplete="off"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-solid" style="width:100%;">
+        Buat Link
+      </button>
+    </form>
+
+    <div id="statusMsg" class="status-msg"></div>
+
+    <div class="result-box" id="resultBox" hidden>
+      <label>Link Undangan</label>
+      <div class="result-row">
+        <input type="text" id="resultLink" readonly />
+        <button type="button" class="btn" id="copyBtn">Salin Link</button>
+      </div>
+      <div class="btn-row" style="margin-top:14px;">
+        <a class="btn btn-solid" id="waShareBtn" href="#" target="_blank" rel="noopener">
+          Kirim via WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="history">
+      <h2>Riwayat Tamu</h2>
+      <ul id="historyList"></ul>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

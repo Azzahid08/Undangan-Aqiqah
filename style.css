@@ -1,0 +1,544 @@
+/* =========================================================================
+   style.css
+   -------------------------------------------------------------------------
+   Palet   : hijau tua zaitun (#1F3D2B), emas pudar (#B8894C), gading (#FBF6EC)
+   Tipografi: "Amiri" (serif, nuansa kaligrafi) untuk judul,
+              "Jost" (sans, geometris) untuk teks & label.
+   ========================================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap");
+
+:root {
+  --ink: #1f3d2b;        /* hijau tua - teks utama & elemen gelap */
+  --ink-soft: #3c5945;
+  --gold: #b8894c;       /* emas pudar - aksen */
+  --gold-light: #e4c99a;
+  --cream: #fbf6ec;      /* gading - latar utama */
+  --cream-deep: #f1e8d6;
+  --line: rgba(31, 61, 43, 0.18);
+  --shadow: 0 18px 40px rgba(31, 61, 43, 0.16);
+  --radius: 2px;
+  --font-display: "Amiri", "Noto Naskh Arabic", serif;
+  --font-body: "Jost", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--cream-deep);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+img { max-width: 100%; display: block; }
+
+/* -------------------------------------------------------------------------
+   Kartu undangan: satu kolom lebar terbatas, seperti kartu fisik
+------------------------------------------------------------------------- */
+.card {
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--cream);
+  min-height: 100vh;
+  position: relative;
+  box-shadow: var(--shadow);
+}
+
+.frame {
+  position: relative;
+  padding: 0 28px 64px;
+}
+
+/* Bingkai ornamen tipis di tepi setiap seksi */
+.frame::before {
+  content: "";
+  position: absolute;
+  inset: 18px 12px;
+  border: 1px solid var(--line);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* -------------------------------------------------------------------------
+   Hero / cover
+------------------------------------------------------------------------- */
+.hero {
+  position: relative;
+  height: 56vh;
+  min-height: 340px;
+  overflow: hidden;
+  background: var(--ink);
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(31,61,43,0.15) 0%, rgba(31,61,43,0.75) 100%);
+}
+
+.hero-content {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 0 32px 32px;
+  color: var(--cream);
+  text-align: center;
+  z-index: 1;
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: var(--gold-light);
+  margin-bottom: 10px;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 2.1rem;
+  line-height: 1.25;
+  margin: 0 0 6px;
+}
+
+.hero-sub {
+  font-size: 0.85rem;
+  color: var(--cream-deep);
+  opacity: 0.9;
+}
+
+/* -------------------------------------------------------------------------
+   Sapaan tamu
+------------------------------------------------------------------------- */
+.greeting {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 40px 0 8px;
+}
+
+.greeting-label {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+}
+
+.guest-name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--gold);
+  border-bottom: 1px solid var(--line);
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+/* -------------------------------------------------------------------------
+   Ayat pembuka
+------------------------------------------------------------------------- */
+.verse {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 28px 6px;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+}
+
+.verse-source {
+  display: block;
+  margin-top: 10px;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+}
+
+/* -------------------------------------------------------------------------
+   Divider ornamen
+------------------------------------------------------------------------- */
+.divider {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 8px 0 28px;
+}
+.divider::before, .divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+.divider span {
+  width: 6px; height: 6px;
+  border: 1px solid var(--gold);
+  transform: rotate(45deg);
+}
+
+/* -------------------------------------------------------------------------
+   Isi teks
+------------------------------------------------------------------------- */
+.section {
+  position: relative;
+  z-index: 1;
+  padding: 8px 0 32px;
+  text-align: center;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  margin: 0 0 4px;
+  color: var(--ink);
+}
+
+.section-title small {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.body-text {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  max-width: 38ch;
+  margin: 0 auto;
+}
+
+/* -------------------------------------------------------------------------
+   Detail acara (kartu kecil)
+------------------------------------------------------------------------- */
+.detail-card {
+  position: relative;
+  z-index: 1;
+  background: var(--cream-deep);
+  border: 1px solid var(--line);
+  padding: 26px 22px;
+  margin: 8px 0 28px;
+  text-align: center;
+}
+
+.detail-row {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+.detail-row:last-child { border-bottom: none; }
+
+.detail-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+
+.detail-value {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+
+.detail-value.small { font-family: var(--font-body); font-size: 0.88rem; }
+
+.countdown {
+  margin-top: 18px;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.02em;
+}
+
+/* -------------------------------------------------------------------------
+   Tombol
+------------------------------------------------------------------------- */
+.btn-row {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.btn:hover { background: var(--ink); color: var(--cream); }
+
+.btn-solid {
+  background: var(--ink);
+  color: var(--cream);
+}
+.btn-solid:hover { background: var(--ink-soft); }
+
+/* -------------------------------------------------------------------------
+   Galeri
+------------------------------------------------------------------------- */
+.gallery {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-bottom: 28px;
+}
+.gallery img { aspect-ratio: 1 / 1; object-fit: cover; }
+
+/* -------------------------------------------------------------------------
+   Footer
+------------------------------------------------------------------------- */
+.footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding-top: 16px;
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  opacity: 0.75;
+}
+
+/* =========================================================================
+   HALAMAN GENERATOR (send.html)
+   ========================================================================= */
+.generator-page {
+  background: var(--cream-deep);
+  min-height: 100vh;
+  padding: 48px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.generator-card {
+  width: 100%;
+  max-width: 460px;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  padding: 36px 30px;
+}
+
+.generator-card h1 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  margin: 0 0 6px;
+  text-align: center;
+  color: var(--ink);
+}
+
+.generator-card p.lead {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin: 0 0 28px;
+}
+
+.field { margin-bottom: 18px; }
+
+.field label {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.field input[type="text"] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  background: #fff;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+.field input[type="text"]:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.result-box {
+  margin-top: 24px;
+  padding: 18px;
+  background: var(--cream-deep);
+  border: 1px dashed var(--gold);
+}
+
+.result-box label {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.result-row {
+  display: flex;
+  gap: 8px;
+}
+
+.result-row input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  background: #fff;
+  font-size: 0.82rem;
+  color: var(--ink);
+}
+
+.status-msg {
+  margin-top: 12px;
+  font-size: 0.78rem;
+}
+.status-ok { color: var(--ink-soft); }
+.status-error { color: #a13d3d; }
+
+.history {
+  margin-top: 34px;
+}
+
+.history h2 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+#historyList {
+  list-style: none;
+  margin: 0; padding: 0;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+#historyList li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.82rem;
+}
+
+.history-name { flex: 1; color: var(--ink); }
+.history-status { font-size: 0.7rem; color: var(--ink-soft); }
+.history-copy {
+  border: 1px solid var(--line);
+  background: none;
+  padding: 4px 10px;
+  font-size: 0.7rem;
+  cursor: pointer;
+  color: var(--ink);
+}
+.history-copy:hover { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+
+/* -------------------------------------------------------------------------
+   Responsif
+------------------------------------------------------------------------- */
+@media (max-width: 380px) {
+  .hero-title { font-size: 1.7rem; }
+  .frame { padding: 0 18px 48px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+.welcome-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--ink);
+  color: var(--cream);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.welcome-overlay.opened {
+  transform: translateY(-100%);
+}
+
+.overlay-content {
+  padding: 20px;
+  animation: pulseIn 1.5s ease-out forwards;
+}
+
+/* Utilitas untuk margin tombol */
+.mt-4 { margin-top: 24px; }
+
+/* Animasi Tombol Mengambang */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+#openInviteBtn {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* State awal elemen yang akan dianimasikan */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+/* State saat elemen masuk ke viewport */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero {
+  overflow: hidden; /* Pastikan gambar tidak meluber saat di-zoom */
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+  transform: scale(1);
+  animation: slowZoom 20s linear infinite alternate;
+}
+
+@keyframes slowZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.15); }
+}
