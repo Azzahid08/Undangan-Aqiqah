@@ -65,9 +65,9 @@ const CONFIG = {
       "Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.",
 
     // Gambar (letakkan file di folder assets/ lalu sesuaikan nama filenya)
-    coverImage: "assets/Gambar-7.jpeg",
+    coverImage: "assets/Gambar-7.png",
     galleryImages: [
-      "assets/Gambar-6.png",
+      "assets/Gambar-6.jpeg",
       "assets/Gambar-3.jpeg",
       "assets/Gambar-4.jpeg"
     ],
