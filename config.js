@@ -22,7 +22,7 @@ const CONFIG = {
      Domain tempat index.html akan diakses tamu, TANPA garis miring di akhir.
      Dipakai oleh send.html untuk merangkai link undangan lengkap.
   ------------------------------------------------------------------------*/
-  BASE_URL: "https://aqiqah.namadomainanda.com",
+  BASE_URL: "https://aqiqah-ameerah.abdulloh-azzahid.my.id",
 
   /* -----------------------------------------------------------------------
      3) INFORMASI ACARA
@@ -65,9 +65,9 @@ const CONFIG = {
       "Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.",
 
     // Gambar (letakkan file di folder assets/ lalu sesuaikan nama filenya)
-    coverImage: "assets/Gambar-2.jpeg",
+    coverImage: "assets/Gambar-7.jpeg",
     galleryImages: [
-      "assets/Gambar-7.png",
+      "assets/Gambar-6.png",
       "assets/Gambar-3.jpeg",
       "assets/Gambar-4.jpeg"
     ],
