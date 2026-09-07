@@ -58,7 +58,7 @@ const CONFIG = {
 
     // Pesan sambutan singkat
     invitationMessage:
-      "Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada acara Aqiqah putra kami.",
+      "Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada acara Aqiqah putri pertama kami.",
 
     // Pesan penutup / doa
     closingMessage:
